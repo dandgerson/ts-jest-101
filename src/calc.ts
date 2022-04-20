@@ -1,19 +1,8 @@
-type OperationType = (a: number, b: number) => number
-
-export interface CalculatorInterface {
-  precision: number
-  add: OperationType
-  sub: OperationType
-  mult: OperationType
-  div: OperationType
-  format: (n: number) => number
-}
-
 type OptionsType = {
   precision: number
 }
 
-class Calculator implements CalculatorInterface {
+class Calculator {
   precision: number
 
   constructor({
@@ -24,16 +13,16 @@ class Calculator implements CalculatorInterface {
 
   format = (n: number) => Number((n).toFixed(this.precision))
 
-  add: OperationType = (a, b) => {
+  add(a: number, b: number): number {
     return this.format(a + b)
   }
-  mult: OperationType = (a, b) => {
+  mult(a: number, b: number): number {
     return this.format(a * b)
   }
-  sub: OperationType = (a, b) => {
+  sub(a: number, b: number): number {
     return this.format(a - b)
   }
-  div: OperationType = (a, b) => {
+  div(a: number, b: number): number {
     return this.format(a / b)
   }
 }

@@ -1,8 +1,8 @@
-import Calculator, { CalculatorInterface } from "./calc";
+import Calculator from "./calc";
 
 
 describe('calculator', () => {
-  let calc: null | CalculatorInterface = null
+  let calc: null | Calculator = null
 
   beforeEach(() => {
     const options = {
